@@ -646,3 +646,15 @@
 
 
 
+import { Suspense } from "react";
+import PreviewClient from "./PreviewClient";
+
+export const dynamic = "force-dynamic";
+
+export default function PreviewPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Loading preview…</div>}>
+      <PreviewClient />
+    </Suspense>
+  );
+}
