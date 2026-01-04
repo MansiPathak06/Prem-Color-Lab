@@ -1,0 +1,48 @@
+"use client";
+
+import React, { Fragment, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
+import GallerySection from "@/components/section/GallerySection";
+import Hero from "@/components/section/Hero";
+import ShowCase from "@/components/section/ShowCase";
+import HeadingTitle from "@/components/ui/HeadingTitle";
+import ProductPage from "@/components/section/Products";
+import CartSidebar from "@/components/cartSidebar";
+
+const HomeClient = () => {
+  const router = useRouter();
+  const [checking, setChecking] = useState(true);
+
+  // useEffect(() => {
+  //   const token =
+  //     typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
+  //   if (!token) {
+  //     router.replace("/signup");
+  //   } else {
+  //     setChecking(false);
+  //   }
+  // }, [router]);
+
+  // if (checking) {
+  //   return (
+  //     <main className="min-h-screen flex items-center justify-center">
+  //       <p className="text-gray-600">Loading...</p>
+  //     </main>
+  //   );
+  // }
+
+  return (
+    <Fragment>
+      <Hero />
+      <HeadingTitle />
+      <ShowCase />
+      <GallerySection />
+      <ProductPage />
+      <CartSidebar />
+    </Fragment>
+  );
+};
+
+export default HomeClient;
